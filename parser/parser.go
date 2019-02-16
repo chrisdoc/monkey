@@ -2,9 +2,9 @@ package parser
 
 import (
 	"fmt"
-	"monkey/ast"
-	"monkey/lexer"
-	"monkey/token"
+	"github.com/chrisdoc/monkey/ast"
+	"github.com/chrisdoc/monkey/lexer"
+	"github.com/chrisdoc/monkey/token"
 )
 
 type Parser struct {
