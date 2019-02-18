@@ -343,18 +343,18 @@ func testIdentifier(t *testing.T, exp ast.Expression, value string) bool {
 }
 
 func testBooleanLiteral(t *testing.T, exp ast.Expression, value bool) bool {
-	ident, ok := exp.(*ast.Boolean)
+	bo, ok := exp.(*ast.Boolean)
 
 	if !ok {
 		t.Errorf("exp not *ast.Identifier. got=%T", exp)
 	}
 
-	if ident.Value != value {
-		t.Errorf("ident.Value not %t. got=%t", value, ident.Value)
+	if bo.Value != value {
+		t.Errorf("ident.Value not %t. got=%t", value, bo.Value)
 	}
 
-	if ident.TokenLiteral() != fmt.Sprintf("%t", value) {
-		t.Errorf("ident.TokenLiteral not %t. got=%s", value, ident.TokenLiteral())
+	if bo.TokenLiteral() != fmt.Sprintf("%t", value) {
+		t.Errorf("ident.TokenLiteral not %t. got=%s", value, bo.TokenLiteral())
 		return false
 	}
 	return true
