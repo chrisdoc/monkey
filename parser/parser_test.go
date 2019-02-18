@@ -342,7 +342,7 @@ func testIdentifier(t *testing.T, exp ast.Expression, value string) bool {
 	return true
 }
 
-func testBoolean(t *testing.T, exp ast.Expression, value bool) bool {
+func testBooleanLiteral(t *testing.T, exp ast.Expression, value bool) bool {
 	ident, ok := exp.(*ast.Boolean)
 
 	if !ok {
@@ -369,7 +369,7 @@ func testLiteralExpression(t *testing.T, exp ast.Expression, expected interface{
 	case string:
 		return testIdentifier(t, exp, v)
 	case bool:
-		return testBoolean(t, exp, v)
+		return testBooleanLiteral(t, exp, v)
 	}
 	t.Errorf("type of exp not handled. got=%T", exp)
 	return false
